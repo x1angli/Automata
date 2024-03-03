@@ -12,8 +12,7 @@ from typing import final
 
 class IsoFormatter(logging.Formatter):
     def formatTime(self, record, datefmt=None):
-        ct = datetime.datetime.now(datetime.timezone.utc)
-        return ct.isoformat()
+        return datetime.datetime.utcnow().isoformat()
 
 
 class MessageType(Enum):
